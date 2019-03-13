@@ -1,7 +1,7 @@
 /** App parameters
  */
 const param = {
-  dataUrl: 'data/',
+  dataUrl: '../data/',
   debug: false,
   indices: [
     { att: 'ind_c', title: 'Population', what:'km', max: 110000, min: 0, fac:8, res:100 },
