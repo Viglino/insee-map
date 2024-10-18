@@ -24,12 +24,9 @@ const map = new Map({
 const view = map.getView();
 
 // Layers
-const ign = new LayerTile({
-  source: new SourceXYZ({
-    url: 'https://wxs.ign.fr/pratique/geoportail/wmts?layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}',
-    attributions: '<a href="https://www.geoportail.gouv.fr/" target="_new">IGN &copy; Geoportail</a>'
-  })
-});
+import Geoportail from 'ol-ext/layer/Geoportail'
+const ign = new Geoportail('GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2')
+
 const filter = new Filter({ operation:'grayscale' });
 ign.addFilter(filter);
 
